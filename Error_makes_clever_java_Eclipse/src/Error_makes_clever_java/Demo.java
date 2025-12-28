@@ -760,37 +760,266 @@ import javax.print.Doc;
 
 
 	//Exception Handling
-import java.util.*;
+//import java.util.*;
+//
+//	class Demo{
+//		public static void main(String[] args) {
+//			Scanner scan = new Scanner(System.in);
+//			
+//			
+//			
+//			try {
+//				int a = scan.nextInt();
+//			}
+//			
+//			catch(InputMismatchException e){
+//				System.out.println("Error handeled "+e);
+//				
+//			}
+//			
+//			try {
+//				int b = 10/0; 
+//			}
+//			
+//			catch(ArithmeticException f){
+//				System.out.println("Error handeled "+f);
+//				
+//			}
+//			
+//			
+//			System.out.println("Program Ended");
+//		}
+//		
+//		
+//		
+//	}
 
-	class Demo{
-		public static void main(String[] args) {
+	//Exception handling Exercise
+//	import java.util.*;
+	
+//	class Demo{
+//		public static void main(String[] args) {
+//			Scanner scan = new Scanner(System.in);
+//			
+//			int a=0;
+//			int b=0;
+//			int c = 0;
+//			
+//			try
+//			{
+//				a = scan.nextInt();
+//				b = scan.nextInt();
+//				
+//			}
+//			catch(InputMismatchException e)
+//			{
+//				System.out.println("Wrong input type,please input int");
+//			}
+//			
+//			
+//			
+//			try {
+//				c = a/b;
+//			}
+//			catch(ArithmeticException f) {
+//				System.out.println("Arthematic Exception, Please retry");
+//			
+//			}
+//			
+//			System.out.println("The division of A and B is :"+c);
+//		}
+//	}
+
+
+//	//Finally keyword
+//	import java.util.*;
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			Scanner scan = new Scanner(System.in);
+//			
+//			
+//			try {
+//				System.out.println("Enter the valuse for a: ");
+//				int a = scan.nextInt();
+//			}
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//			finally {
+//				System.out.println("Hi I'm finally");
+//			}
+//			
+//			
+//		}
+//	}
+
+	//Using finally keyword saying if the and exception occured or not
+	
+	import java.util.*;
+	
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			Scanner scan = new Scanner(System.in);
+//			int error = 0;
+//			
+//			try {
+//				System.out.println("Enter the input for A :");
+//				int a = scan.nextInt();
+//			}
+//			catch(Exception e){
+//				error = 1;
+//			}
+//			
+//			finally {
+//				if(error == 1)
+//				{
+//					System.out.println("Error occured");
+//				}
+//				else if(error == 0)
+//				{
+//					System.out.println("No Error occured");
+//				}
+//				
+//			}
+//			
+//			
+//		}
+//	}
+	
+	
+//		//Throw keyword
+//		import java.util.*;
+//		
+//		class Demo{
+//			
+//			public static void main(String[] args) {
+//				Scanner scan = new Scanner(System.in);
+//				
+//				try {
+//					int age = scan.nextInt();
+//					
+//					throw new ArithmeticException ("Error occured"); //if an erro occur in above then this line will not be captured by catch, else yes
+//				}
+//				catch(Exception e){
+//					System.out.println(e);
+//				}	
+//			}
+//		}
+	
+	
+//	//Throw keyword with if
+//	import java.util.*;
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			Scanner scan = new Scanner(System.in);
+//			
+//			
+//			try
+//			{
+//				int age =scan.nextInt();
+//				
+//				if(age<1) {
+//					throw new ArithmeticException("Enter more than or eaual to 1");
+//				}
+//			}
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//			System.out.println("Program Ended");
+//		}
+//	}
+
+
+	//Custom Exception - to print an exception if age is below 18
+//	import java.util.*;
+//	
+//	
+//	class NotValidAge extends Exception{
+//	
+//		public NotValidAge(String s)
+//		{
+//			super(s);
+//		}
+//		
+//	}	
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			Scanner scan = new Scanner(System.in);
+//			
+//			try {
+//				System.out.println("Enter your age : ");
+//				int age = scan.nextInt();
+//				if(age<18)
+//				{
+//					throw new NotValidAge("The age must be more than 18");
+//				}
+//			}
+//			catch(Exception e) {
+//				System.out.println(e);
+//			}
+//			
+//			System.out.println("Program ended");
+//						
+//		}
+//	}
+	
+	
+		//Exception exercise
+	import java.util.*;
+	
+	class DivisionExample{
+		public int dividenumbers() {
+			int c = 0;
 			Scanner scan = new Scanner(System.in);
 			
+		try {
+			System.out.println("Enter the numerator :");
+			int a = scan.nextInt();
+			System.out.println("Enter the Denomator :");
+			int b = scan.nextInt();	
+			if(b==0)
+			 {
+				 throw new ArithmeticException("Cannot be divided by 0");
+			 }
+			c = a/b;
 			
-			
-			try {
-				int a = scan.nextInt();
-			}
-			
-			catch(InputMismatchException e){
-				System.out.println("Error handeled "+e);
-				
-			}
-			
-			try {
-				int b = 10/0; 
-			}
-			
-			catch(ArithmeticException f){
-				System.out.println("Error handeled "+f);
-				
-			}
-			
-			
-			System.out.println("Program Ended");
 		}
-		
-		
-		
+			catch(Exception e){
+				System.out.println(e);
+			}
+			return c;
+		}
 	}
+	
+	class Demo{
+		public static void main(String[] args) {
+			
+			int output = 0;
+			
+			DivisionExample obj = new DivisionExample();
+			output = obj.dividenumbers();
+			
+			System.out.println("The division is : "+output);
+			
+		}
+	}
+	
+	
+	
+	
 
+	
+	
+	
+	
+	
+	
+	
