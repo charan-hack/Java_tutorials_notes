@@ -973,49 +973,383 @@ import javax.print.Doc;
 	
 	
 		//Exception exercise
-	import java.util.*;
+//	import java.util.*;
+//	
+//	class DivisionExample{
+//		public int dividenumbers() {
+//			int c = 0;
+//			Scanner scan = new Scanner(System.in);
+//			
+//		try {
+//			System.out.println("Enter the numerator :");
+//			int a = scan.nextInt();
+//			System.out.println("Enter the Denomator :");
+//			int b = scan.nextInt();	
+//			if(b==0)
+//			 {
+//				 throw new ArithmeticException("Cannot be divided by 0");
+//			 }
+//			c = a/b;
+//			
+//		}
+//			catch(Exception e){
+//				System.out.println(e);
+//			}
+//			return c;
+//		}
+//	}
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			int output = 0;
+//			
+//			DivisionExample obj = new DivisionExample();
+//			output = obj.dividenumbers();
+//			
+//			System.out.println("The division is : "+output);
+//			
+//		}
+//	}
 	
-	class DivisionExample{
-		public int dividenumbers() {
-			int c = 0;
-			Scanner scan = new Scanner(System.in);
-			
-		try {
-			System.out.println("Enter the numerator :");
-			int a = scan.nextInt();
-			System.out.println("Enter the Denomator :");
-			int b = scan.nextInt();	
-			if(b==0)
-			 {
-				 throw new ArithmeticException("Cannot be divided by 0");
-			 }
-			c = a/b;
-			
-		}
-			catch(Exception e){
-				System.out.println(e);
-			}
-			return c;
+
+	
+//	//Exercise with custom exception
+//	import java.util.*;
+//	
+//	
+//	class InvalidAgeException extends Exception{
+//		
+//		InvalidAgeException(String A)
+//		{
+//			super(A);
+//		}
+//	}
+//	
+//	
+//	class Agevalidator
+//	{
+//		void Agecheck(int b)
+//		{
+//			try {
+//				if(b<0 || b>50)
+//				{
+//					throw new InvalidAgeException ("Age must be between 1 to 49");
+//				}
+//				
+//				else {
+//
+//					System.out.println("Congrauglation you are eligible");
+//					
+//				}
+//			}
+//			catch(Exception e){
+//				System.out.println(e);
+//			}
+//		}
+//	}
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			Agevalidator obj = new Agevalidator();
+//			Scanner scan = new Scanner(System.in);
+//			try {
+//				
+//			System.out.println("Enter your age : ");
+//			int age = scan.nextInt();
+//			obj.Agecheck(age);
+//			}
+//			catch(Exception f)
+//			{
+//				System.out.println(f);
+//			}
+//			
+//		}
+//	}
+	
+
+	
+//	//File writring using file writer
+//	
+//	import java.io.FileWriter;
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			try {
+//			FileWriter Fw = new FileWriter("output.txt");
+//			Fw.write("Hello World");
+//			Fw.close();
+//			System.out.println("Success");	
+//			}
+//			
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//		}
+//	}
+
+	
+	
+	//Adding more text into the file created above using append keyword
+//	import java.io.FileWriter;
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			try {
+//			FileWriter Fw = new FileWriter("output.txt",true);
+//			Fw.append(" Happy to connect with you");
+//			Fw.close();
+//			System.out.println("Success");	
+//			}
+//			
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//		}
+//	}
+	
+	
+	//Trying different output path
+//	
+//	import java.io.FileWriter;
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			try {
+//			FileWriter Fw = new FileWriter("D:\\Java\\Java_tutorials_notes\\output.txt");
+//			Fw.write(" Happy to connect with you");
+//			Fw.close();
+//			System.out.println("Success");	
+//			}
+//			
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//		}
+//	}
+	
+	
+	//file writing using buffered writing 
+//	import java.io.FileWriter;
+//	import java.io.BufferedWriter;
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			try {
+//			FileWriter Fw = new FileWriter("output.txt");
+//			BufferedWriter bw = new BufferedWriter(Fw);
+//			bw.write("Hello g");
+//			bw.newLine();
+//			bw.write("How are you");
+//			bw.close();
+//			System.out.println("Success");
+//			}
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//		}
+//	}
+	
+	
+	//File reader - reads char  by char
+//	import java.io.FileReader;
+	
+//	class Demo{
+//		public static void main(String[] args) {
+//			
+//			try {
+//			FileReader fr = new FileReader("output.txt");
+//			int c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			c = fr.read();
+//			System.out.print((char)c);
+//			fr.close();
+//			}	
+//			catch(Exception e)
+//			{
+//				System.out.println(e);
+//			}
+//			
+//		}
+//	}
+	
+	
+	//File reader - wraping the above code into while loop
+//		import java.io.FileReader;
+//		
+//		class Demo{
+//			public static void main(String[] args) {
+//				
+//				try {
+//				FileReader fr = new FileReader("output.txt");
+//				
+//				int c = fr.read();
+//				while(c!=-1) {
+//				System.out.print((char)c);
+//				c = fr.read();
+//				}
+//				fr.close();
+//				}	
+//				catch(Exception e)
+//				{
+//					System.out.println(e);
+//				}		
+//				
+//			}
+//		}
+	
+		
+		//Buffer reader - reads line by line
+//		import java.io.BufferedReader;
+//		import java.io.FileReader;
+//		
+//		class Demo{
+//			public static void main(String[] args) {
+//				
+//				try {
+//				FileReader fr = new FileReader("output.txt");	
+//				BufferedReader br = new BufferedReader(fr);
+//				
+//				String line = br.readLine();
+//				
+//				while(line!=null)
+//				{
+//					System.out.println(line);
+//					line = br.readLine();
+//				}
+//				
+//				br.close();
+//				
+//				}
+//				catch(Exception e)
+//				{
+//					System.out.println(e);
+//				}
+//			}
+//		}
+//	
+	
+	
+	// Threads 
+	
+//	class A extends Thread {
+//		
+//		public void run() {
+//			for(int i = 0; i<10;i++)
+//			{
+//				System.out.println("Hello...");
+//				
+////				try {
+////					Thread.sleep(10);
+////				} catch (InterruptedException e) {
+////					// TODO Auto-generated catch block
+////					e.printStackTrace();
+////				}
+//			}
+//		}
+//	}
+//	
+//	class B extends Thread {
+//			
+//			public void run() {
+//				for(int i = 0; i<10;i++)
+//				{
+//					System.out.println("Hi...");
+//					
+////					try {
+////						Thread.sleep(10);// we can put this thread if we want - the bewlo code for thread.sleep was suggested by eclipse itself I don't know
+////					} catch (InterruptedException e) {
+////						// TODO Auto-generated catch block
+////						e.printStackTrace();
+////					}
+//				}
+//			}
+//		}
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			A a1 = new A();
+//			B b1 = new B();
+//			
+//			b1.setPriority(10);
+//			a1.start();
+//			b1.start();
+//		}
+//	}
+//	
+	
+	
+	//Joins in thread
+//	class A extends Thread{
+//		int a = 0 ;
+//		public void run()
+//		{
+//			for(int i =0 ; i<50 ;i++)
+//			{
+//				a = i;
+//			}
+//		}
+//	}
+//	
+//	class Demo{
+//		public static void main(String[] args) {
+//			A a1 = new A();
+//			
+//			a1.start();
+//			try {
+//				a1.join();
+//			} catch (InterruptedException e) {//note sure what this code is, eclipse added it
+//				// TODO Auto-generated catch block
+//				e.printStackTrace();
+//			}
+//			System.out.println(a1.a);
+//			
+//		}
+//	}
+	
+	
+	
+	//runnable in threads
+	
+	class A implements Runnable{
+		public void run()
+		{
+			System.out.println("Hi");
 		}
 	}
 	
 	class Demo{
+	
 		public static void main(String[] args) {
 			
-			int output = 0;
+			A obj = new A();
 			
-			DivisionExample obj = new DivisionExample();
-			output = obj.dividenumbers();
+			Thread tr = new Thread(obj);
 			
-			System.out.println("The division is : "+output);
-			
+			tr.start();
+
 		}
 	}
 	
-	
-	
-	
-
 	
 	
 	
